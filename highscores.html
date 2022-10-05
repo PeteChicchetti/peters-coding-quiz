@@ -7,12 +7,15 @@
     <title>Quiz Highscores</title>
 </head>
 <body>
-    <h1>High Scores</h1>
-    <p>Your final score is: <span id="final-score"></span></p>
-    <ul>
-        <!-- Insert li using JavaScript -->
-    </ul>
-    <button class="">Go Back</button>
-    <button class="">Clear Highscores</button>
+    <div class="wrapper">
+        <h1>High Scores</h1>
+        <p>Your final score is: <span id="final-score"></span></p>
+        <ol id="highscores"></ol>
+
+        <a href="index.html"><button>Go Back</button></a>
+        <button id="clear">Clear Highscores</button>
+    </div>
+
+    <script src="./assets/js/scores.js"></script>
 </body>
 </html>
