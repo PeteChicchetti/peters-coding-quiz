@@ -39,10 +39,10 @@ h1 {
     font-weight: bold;
 }
 
-/* style button in JS? no click */
 .startBtn {
     background-color: var(--purple);
     color: white;
     border-radius: 5px;
-    padding: 4px
+    padding: 4px;
+    cursor: pointer;
 }

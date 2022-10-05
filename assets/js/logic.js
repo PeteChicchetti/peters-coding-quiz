@@ -5,14 +5,19 @@
 
 // variables to reference DOM elements
 var questionsEl = document.getElementById('questions');
-
+var startBtn = document.querySelector('.startBtn');
+var startEl = document.getElementById('start-page');
+var questionsEl = document.getElementById('questions');
 
 /// FUNCTION TO START THE QUIZ
 function startQuiz() {
   // hide start screen 
   
+  if (startEl) {
+    startEl.style.display = 'none';
+  }
   // un-hide questions section
-
+  
   // start timer
 
   // show starting time
@@ -100,5 +105,5 @@ function saveHighscore() {
   // user clicks button to submit initials
 
   // user clicks button to start quiz
-
+startBtn.addEventListener('click', startQuiz);
   // user clicks on element containing choices

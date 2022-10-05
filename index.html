@@ -15,7 +15,7 @@
             <a class="scores" href="highscores.html">View Highscores</a>
                 <span class="timer">
                     <span class="time_text">Time:</span>
-                    <span class="time_sec">0</span>
+                    <span id="time_sec"></span>
                 </span>
         </header>
 
@@ -29,7 +29,7 @@
             </div>
 
 <!------- Questions Section ------>
-            <div id="questions" class="hidden">
+            <div id="questions" class="hide">
                 <h2 id="questions-title"></h2>
                     <!-- Questions inserted from JavaScript -->
                 <div id="options" class="options"></div>
@@ -37,7 +37,7 @@
             </div>
 
 <!------ Enter Highscore ------>
-            <section id="end-page" class="hidden">
+            <section id="end-page" class="hide">
                 <h2>All Done!</h2>
                 <p>Your final score is: <span id="final-score"></span>.</p>
                 <p>
@@ -45,7 +45,7 @@
                     <button id="submit">Submit</button>
                 </p>
             </section>
-            <div id="feedback" class="feeback hidden"></div>
+            <div id="feedback" class="feedback hide"></div>
 
         </main>
 
