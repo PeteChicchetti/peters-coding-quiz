@@ -18,35 +18,34 @@
             </span>
         </header>
 
-        <main>
+        <main class="wrapper">
+
 <!------ Start Page ------>
-            <div class="" id="start-page">
+            <div class="start-page" id="start">
                 <h1 class="title">Coding Quiz Challenge</h1>
                 <p class="para">quiz description</p>
                 <button class="start">Start!</button>
             </div>
+
 <!------- Questions Section ------>
-            <div class="" id="hidden">
-                <div class="que_text" id="">
+            <div class="questions" id="hidden">
+                <h2 class="que_text"></h2>
                     <!-- Questions inserted from JavaScript -->
-                </div>
-                <div class="options" id="">
-                    <ul>
+                <div class="options" id="options"></div>
                         <!-- Options inserted from JavaScript -->
-                    </ul>
-                </div>
             </div>
 
 <!------ Enter Highscore ------>
-            <section id="" class="">
+            <section id="end-page" class="hidden">
                 <h2>All Done!</h2>
-                <p>Your final score is: <span id="final-score"></span></p>
+                <p>Your final score is: <span id="final-score"></span>.</p>
                 <p>
                     Enter Initials: <input type="text" id="initials" max="3">
+                    <button id="submit">Submit</button>
                 </p>
-                <button id="submt">Submit</button>
             </section>
-            <div id="feedback" class="feeback-hide"></div>
+            <div id="feedback" class="feeback hidden"></div>
+            
         </main>
 
     </div>
