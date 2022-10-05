@@ -1,5 +1,5 @@
 // variables to keep track of quiz state
-  var currentQuestion = document.getElementById
+    // currentQuestion
     // time
     // timerId
 

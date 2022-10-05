@@ -1,0 +1,48 @@
+:root {
+    --purple: rgb(129, 19, 129);
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+main {
+    display: block;
+}
+
+.scores {
+    text-decoration: none;
+    color: var(--purple);
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#start-page {
+    text-align: center;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 200%;
+    font-weight: bold;
+    padding: 15px;
+    font-family: sans-serif;
+}
+
+.para {
+    width: 540px;
+    margin: auto;
+    padding: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* style button in JS? no click */
+.startBtn {
+    background-color: var(--purple);
+    color: white;
+    border-radius: 5px;
+    padding: 4px
+}
