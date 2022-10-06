@@ -1,28 +1,33 @@
 // variables to keep track of quiz state
     // currentQuestion
+    var currentQuestion= '';
     // time
+    var timer;
     // timerId
-
+    var timerCount;
+    
 // variables to reference DOM elements
 var questionsEl = document.getElementById('questions');
 var startBtn = document.querySelector('.startBtn');
 var startEl = document.getElementById('start-page');
 var questionsEl = document.getElementById('questions');
+var timerId = document.querySelector('.time-sec');
 
 /// FUNCTION TO START THE QUIZ
 function startQuiz() {
   // hide start screen 
-  
+
   if (startEl) {
     startEl.style.display = 'none';
   }
   // un-hide questions section
   
   // start timer
-
+  timerCount = 60;
   // show starting time
 
   getQuestion();
+  clockTick();
 }
 
 /// FUNCTION TO GET/SHOW EACH QUESTION ///
@@ -84,8 +89,15 @@ function quizEnd() {
 /// FUNCTION FOR UPDATING THE TIME ///
 function clockTick() {
   // update time
-
+  timerInterval = setInterval(function() {
+    timerCount--;
+    timerId.textContent = timerCount;
   // check if user ran out of time
+  if (timerCount === 0) {
+    clearInterval(timerInterval);
+  }
+  }, 1000);
+  
 }
 
 function saveHighscore() {
