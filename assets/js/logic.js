@@ -1,50 +1,46 @@
 // variables to keep track of quiz state
     // currentQuestion
-    var currentQuestion= '';
+    var currentQuestion = 0;
     // time
     var timer;
     // timerId
     var timerCount;
     
 // variables to reference DOM elements
-var questionsEl = document.getElementById('questions');
 var startBtn = document.querySelector('.startBtn');
-var startEl = document.getElementById('start-page');
-var questionsEl = document.getElementById('questions');
 var timerId = document.querySelector('.time-sec');
 
 /// FUNCTION TO START THE QUIZ
 function startQuiz() {
   // hide start screen 
-
-  if (startEl) {
+  var startEl = document.getElementById('start-page');
     startEl.style.display = 'none';
-  }
   // un-hide questions section
-  
+  var questionsEl = document.getElementById('questions');
+    questionsEl.style.display = 'block';
   // start timer
   timerCount = 60;
   // show starting time
 
-  getQuestion();
+  getQuestion(currentQuestion);
   clockTick();
 }
 
 /// FUNCTION TO GET/SHOW EACH QUESTION ///
 function getQuestion() {
   // get current question object from array
-
+  
   // update title with current question
-
+  document.getElementById('questions-title').textContent = questions[currentQuestion].title;
   // clear out any old question choices
-
+  document.getElementsById('options').innerhtml = '';
   // loop over choices
-    // FOR {
+  
       // create new button for each choice
   
       // display on the page
       
-    // } 
+    current();
 }
 
 /// FUNCTION FOR CLICKING A QUESTION ///
