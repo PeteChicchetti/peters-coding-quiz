@@ -9,6 +9,7 @@
 // variables to reference DOM elements
 var startBtn = document.querySelector('.startBtn');
 var timerId = document.querySelector('.time-sec');
+var feedback = document.getElementById('feedback')
 
 /// FUNCTION TO START THE QUIZ
 function startQuiz() {
@@ -21,45 +22,57 @@ function startQuiz() {
   // start timer
   timerCount = 60;
   // show starting time
-
-  getQuestion(currentQuestion);
+  
+  getQuestion();
   clockTick();
 }
 
 /// FUNCTION TO GET/SHOW EACH QUESTION ///
 function getQuestion() {
   // get current question object from array
+    document.getElementById('questions-title').textContent = questions[currentQuestion].title;
+    //document.getElementsById('options').innerhtml = '';
+
   
   // update title with current question
-  document.getElementById('questions-title').textContent = questions[currentQuestion].title;
+  
   // clear out any old question choices
-  document.getElementsById('options').innerhtml = '';
+  
+
   // loop over choices
-  
+  for (let i = 0; i < questions[currentQuestion].choices.length; i++){
+    var btn = document.createElement('button');
+    btn.textContent = questions[currentQuestion].choices[i];
+    document.getElementById('options').appendChild(btn);
+    btn.onclick = questionClick;
+  }
+ 
       // create new button for each choice
-  
+    
       // display on the page
       
-    current();
+
 }
 
 /// FUNCTION FOR CLICKING A QUESTION ///
 function questionClick(event) {
 
   // if the clicked element is not a choice button, do nothing.
-  if (something) {
+  // if (this.value !== questions[currentQuestion].answer) {
+  //   feedback.textContent = 'Incorrect! Try again!';
+  // }
 
-  }
-
-  if (something) {
+  if (this.value !== questions[currentQuestion].answer) {
   // check if user guessed wrong
     // penalize time
 
     // display new time on page
 
     // give them feedback, letting them know it's wrong
+    feedback.textContent = 'Incorrect! Try again!';
   } else {
     // give them feedback, letting them know it's right
+    feedback.textContent = 'Correct!';
   }
 
   // flash right/wrong feedback on page for a short period of time
