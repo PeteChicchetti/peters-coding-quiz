@@ -9,7 +9,8 @@
 // variables to reference DOM elements
 var startBtn = document.querySelector('.startBtn');
 var timerId = document.querySelector('.time-sec');
-var feedback = document.getElementById('feedback')
+var feedback = document.getElementById('feedback');
+
 
 /// FUNCTION TO START THE QUIZ
 function startQuiz() {
@@ -31,7 +32,7 @@ function startQuiz() {
 function getQuestion() {
   // get current question object from array
     document.getElementById('questions-title').textContent = questions[currentQuestion].title;
-    //document.getElementsById('options').innerhtml = '';
+    document.querySelector('.options').innerHTML = "";
 
   
   // update title with current question
@@ -44,6 +45,7 @@ function getQuestion() {
     var btn = document.createElement('button');
     btn.textContent = questions[currentQuestion].choices[i];
     document.getElementById('options').appendChild(btn);
+    btn.setAttribute('value', questions[currentQuestion].answer);
     btn.onclick = questionClick;
   }
  
@@ -58,17 +60,16 @@ function getQuestion() {
 function questionClick(event) {
 
   // if the clicked element is not a choice button, do nothing.
-  // if (this.value !== questions[currentQuestion].answer) {
-  //   feedback.textContent = 'Incorrect! Try again!';
-  // }
 
-  if (this.value !== questions[currentQuestion].answer) {
+  if (event.target.innerText !== questions[currentQuestion].answer) {
   // check if user guessed wrong
+ 
     // penalize time
-
+    timerCount -= 10;
     // display new time on page
 
     // give them feedback, letting them know it's wrong
+
     feedback.textContent = 'Incorrect! Try again!';
   } else {
     // give them feedback, letting them know it's right
@@ -78,8 +79,13 @@ function questionClick(event) {
   // flash right/wrong feedback on page for a short period of time
 
   // move to next question
-
+  currentQuestion++;
   // check if we've run out of questions
+  if (currentQuestion > questions.length) {
+    quizEnd()
+  } else {
+    getQuestion();
+  }
     // if so, end the quiz
     // else, get the next question
 }
