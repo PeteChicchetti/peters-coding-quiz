@@ -10,15 +10,16 @@
 var startBtn = document.querySelector('.startBtn');
 var timerId = document.querySelector('.time-sec');
 var feedback = document.getElementById('feedback');
-
+var startEl = document.getElementById('start-page');
+var questionsEl = document.getElementById('questions');
 
 /// FUNCTION TO START THE QUIZ
 function startQuiz() {
   // hide start screen 
-  var startEl = document.getElementById('start-page');
+  
     startEl.style.display = 'none';
   // un-hide questions section
-  var questionsEl = document.getElementById('questions');
+  
     questionsEl.style.display = 'block';
   // start timer
   timerCount = 60;
@@ -80,12 +81,14 @@ function questionClick(event) {
 
   // move to next question
   currentQuestion++;
+  
   // check if we've run out of questions
-  if (currentQuestion > questions.length) {
+  if (currentQuestion == questions.length) {
     quizEnd()
   } else {
     getQuestion();
   }
+  
     // if so, end the quiz
     // else, get the next question
 }
@@ -93,12 +96,14 @@ function questionClick(event) {
 /// FUNCTION TO END THE QUIZ ///
 function quizEnd() {
   // stop timer
-
+  clearInterval(timerInterval);
   // show end screen
-
+  let end = document.getElementById('end-page');
+  end.style.display = 'block';
   // show final score
 
   // hide questions section
+  questionsEl.style.display = 'none';
 }
 
 /// FUNCTION FOR UPDATING THE TIME ///
