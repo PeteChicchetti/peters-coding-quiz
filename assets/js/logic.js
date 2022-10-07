@@ -125,20 +125,32 @@ function clockTick() {
 
 function saveHighscore() {
   // get value of input box - for initials
-  // var inputField = document.getElementById('initials');
+  var inputField = document.getElementById('initials').value;
   // make sure value wasn't empty
+  let finalScore = document.getElementById('final-score').innerHTML;
+    if (inputField == '') {
+      alert('Please input at least 1 character')
+      return null;
+    };
     // get saved scores from localstorage, or if not any, set to empty array
-
-    // format new score object for current user
-
-    // save to localstorage
-  // localStorage.getItem('name', inputField);
+    var currentScore = { init: inputField, score: finalScore };
+    var savedScores = JSON.parse(localStorage.getItem('savedScores'));
+    if (savedScores !== null) {
+      // save to localstorage
+        savedScores.push(currentScore);
+        localStorage.setItem('savedScores', JSON.stringify(savedScores));
+    } else {
+        savedScores = [currentScore];
+        localStorage.setItem('savedScores', JSON.stringify(savedScores));
+    };
     // redirect to next page
-}
+    window.location.href = './highscores.html';
+  }
+
 
 /// CLICK EVENTS ///
   // user clicks button to submit initials
-// submit.addEventListener('click', saveHighscore);
+submit.addEventListener('click', saveHighscore);
   // user clicks button to start quiz
 startBtn.addEventListener('click', startQuiz);
   // user clicks on element containing choices
