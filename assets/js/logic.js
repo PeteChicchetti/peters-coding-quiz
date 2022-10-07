@@ -125,20 +125,20 @@ function clockTick() {
 
 function saveHighscore() {
   // get value of input box - for initials
-
+  // var inputField = document.getElementById('initials');
   // make sure value wasn't empty
     // get saved scores from localstorage, or if not any, set to empty array
 
     // format new score object for current user
 
     // save to localstorage
-
+  // localStorage.getItem('name', inputField);
     // redirect to next page
 }
 
 /// CLICK EVENTS ///
   // user clicks button to submit initials
-submit.addEventListener('click', )
+// submit.addEventListener('click', saveHighscore);
   // user clicks button to start quiz
 startBtn.addEventListener('click', startQuiz);
   // user clicks on element containing choices
