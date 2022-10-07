@@ -6,4 +6,4 @@ This api is designed to test a users knowledge with basic coding related questio
 
 https://petechicchetti.github.io/peters-coding-quiz/
 
-[!alt](./assets/images/quiz-start-page.png)
+![This is an image of the deployed website](./assets/images/quiz-start-page.png)
