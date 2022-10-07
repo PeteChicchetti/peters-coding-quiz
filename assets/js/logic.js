@@ -12,6 +12,7 @@ var timerId = document.querySelector('.time-sec');
 var feedback = document.getElementById('feedback');
 var startEl = document.getElementById('start-page');
 var questionsEl = document.getElementById('questions');
+var submit = document.getElementById('submit')
 
 /// FUNCTION TO START THE QUIZ
 function startQuiz() {
@@ -100,8 +101,10 @@ function quizEnd() {
   // show end screen
   let end = document.getElementById('end-page');
   end.style.display = 'block';
+  document.querySelector('.feedback').innerHTML = "";
   // show final score
-
+  let endTime = document.getElementById('final-score');
+  endTime.textContent = timerCount;
   // hide questions section
   questionsEl.style.display = 'none';
 }
@@ -135,7 +138,7 @@ function saveHighscore() {
 
 /// CLICK EVENTS ///
   // user clicks button to submit initials
-
+submit.addEventListener('click', )
   // user clicks button to start quiz
 startBtn.addEventListener('click', startQuiz);
   // user clicks on element containing choices
